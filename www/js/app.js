@@ -50,6 +50,8 @@
 
   .controller('AppCtrl', AppCtrl);
 
+  AppCtrl.$inject = ['$scope', '$ionicModal', '$timeout'];
+
   function AppCtrl($scope, $ionicModal, $timeout) {
 
     // With the new view caching in Ionic, Controllers are only called
