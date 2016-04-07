@@ -1,7 +1,8 @@
 (function() {
+  'use strict';
 
   angular.module('services.playlist', [])
-  .factory('playlistService', PlaylistService);
+    .factory('playlistService', PlaylistService);
 
   function PlaylistService() {
     var playlists = [

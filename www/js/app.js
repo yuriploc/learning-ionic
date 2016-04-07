@@ -1,4 +1,5 @@
 (function() {
+  'use strict';
 
   angular.module('pglv', ['ionic', 'playlist'])
 
@@ -24,7 +25,7 @@
       url: '/app',
       abstract: true,
       templateUrl: 'templates/menu.html',
-      controller: 'AppCtrl'
+      controller: 'AppCtrl as appVm'
     })
 
     .state('app.search', {
@@ -46,51 +47,6 @@
     });
 
     $urlRouterProvider.otherwise('/app/playlists');
-  })
-
-  .controller('AppCtrl', AppCtrl);
-
-  AppCtrl.$inject = ['$scope', '$ionicModal', '$timeout'];
-
-  function AppCtrl($scope, $ionicModal, $timeout) {
-
-    // With the new view caching in Ionic, Controllers are only called
-    // when they are recreated or on app start, instead of every page change.
-    // To listen for when this page is active (for example, to refresh data),
-    // listen for the $ionicView.enter event:
-    //$scope.$on('$ionicView.enter', function(e) {
-    //});
-
-    $scope.loginData = {};
-
-    // TODO: como organizar melhor os modais?
-    $ionicModal.fromTemplateUrl('templates/login.html', {
-      scope: $scope
-    }).then(function(modal) {
-      $scope.modal = modal;
-    });
-
-    $scope.closeLogin = function() {
-      $scope.loginData = {};
-      $scope.modal.hide();
-    };
-
-    $scope.login = function() {
-      $scope.modal.show();
-    };
-
-    $scope.$on('$destroy', function() {
-      $scope.modal.remove();
-    });
-
-    $scope.doLogin = function() {
-      console.log('Doing login', $scope.loginData);
-
-      // Simulate a login delay.
-      $timeout(function() {
-        $scope.closeLogin();
-      }, 1000);
-    };
-  }
+  });
 
 })();

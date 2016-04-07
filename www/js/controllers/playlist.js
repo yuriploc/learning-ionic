@@ -1,5 +1,5 @@
 (function() {
-
+  'use strict';
   angular.module('playlist', ['services.playlist'])
 
   .config(function($stateProvider, $urlRouterProvider) {
@@ -9,7 +9,7 @@
       views: {
         'menuContent': {
           templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistCtrl'
+          controller: 'PlaylistCtrl as playlistVm'
         }
       }
     })
@@ -19,7 +19,7 @@
       views: {
         'menuContent': {
           templateUrl: 'templates/playlist.html',
-          controller: 'PlaylistCtrl'
+          controller: 'PlaylistCtrl as playlistVm'
         }
       }
     })
@@ -30,7 +30,8 @@
   PlaylistCtrl.$inject = ['$scope','playlistService'];
 
   function PlaylistCtrl($scope, playlistService) {
-    $scope.playlists = playlistService.getAll();
+    var playlistVm = this;
+    playlistVm.playlists = playlistService.getAll();
   }
 
 })();
