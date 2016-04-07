@@ -15,7 +15,7 @@
     // listen for the $ionicView.enter event:
     //$scope.$on('$ionicView.enter', function(e) {
     //});
-
+ 
     var appVm = this;
     appVm.loginData = {};
 
