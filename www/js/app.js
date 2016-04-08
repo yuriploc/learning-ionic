@@ -1,7 +1,11 @@
 (function() {
   'use strict';
 
-  angular.module('pglv', ['ionic', 'playlist'])
+  angular.module('pglv', [
+    'ionic',
+    'playlist',
+    'lojas'
+  ])
 
   .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -18,35 +22,5 @@
       }
     });
   })
-
-  .config(function($stateProvider, $urlRouterProvider) {
-    $stateProvider
-    .state('app', {
-      url: '/app',
-      abstract: true,
-      templateUrl: 'templates/menu.html',
-      controller: 'AppCtrl as appVm'
-    })
-
-    .state('app.search', {
-      url: '/search',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/search.html'
-        }
-      }
-    })
-
-    .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    });
-
-    $urlRouterProvider.otherwise('/app/playlists');
-  });
 
 })();

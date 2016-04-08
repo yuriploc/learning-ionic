@@ -3,7 +3,29 @@
 
   angular
     .module('pglv')
-    .controller('AppCtrl', AppCtrl);
+    .controller('AppCtrl', AppCtrl)
+    .config(configApp);
+
+    function configApp($stateProvider, $urlRouterProvider) {
+      $stateProvider
+        .state('menu', {
+          url: '/menu',
+          abstract: true,
+          templateUrl: 'templates/menu.html',
+          controller: 'AppCtrl as appVm'
+        })
+
+        .state('menu.search', {
+          url: '/search',
+          views: {
+            'menuContent': {
+              templateUrl: 'templates/search.html'
+            }
+          }
+        });
+
+        $urlRouterProvider.otherwise('/menu/playlists');
+    }
 
   AppCtrl.$inject = ['$scope', '$ionicModal', '$timeout'];
 
@@ -15,7 +37,7 @@
     // listen for the $ionicView.enter event:
     //$scope.$on('$ionicView.enter', function(e) {
     //});
- 
+
     var appVm = this;
     appVm.loginData = {};
 

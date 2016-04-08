@@ -4,7 +4,7 @@
 
   .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
-    .state('app.playlists', {
+    .state('menu.playlists', {
       url: '/playlists',
       views: {
         'menuContent': {
@@ -14,7 +14,7 @@
       }
     })
 
-    .state('app.single', {
+    .state('menu.single', {
       url: '/playlists/:playlistId',
       views: {
         'menuContent': {
