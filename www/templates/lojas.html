@@ -5,22 +5,41 @@
       <h1 class="title">Super Portugal</h1>
     </div>
   </ion-nav-title>
-  <ion-content>
-    <div>
-      <h3>duas coisas</h3>
-      <h3>duas coisas</h3>
-      <h3>duas coisas</h3>
-      <h3>duas coisas</h3>
-      <h3>duas coisas</h3>
-      <h3>duas coisas</h3>
-      <h3>duas coisas</h3>
-      <h3>duas coisas</h3>
-      <h3>duas coisas</h3>
-      <h3>duas coisas</h3>
-      <h3>duas coisas</h3>
-      <h3>duas coisas</h3>
-      <h3>duas coisas</h3>
-      <h3>duas coisas</h3>
+  <ion-content class="has-tabs has-tabs-top" has-header="true" padding="true">
+
+    <h3>Chat list</h3>
+    <div class="list">
+
+      <a class="item item-avatar" href="#/menu/chat-single">
+        <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Zachary_Quinto_2011.jpg/200px-Zachary_Quinto_2011.jpg" />
+        <h2>Oliver Thredson</h2>
+        <p>I'm a psychiatrist at Briarcliff Institute</p>
+      </a>
+      <a class="item item-avatar" href="#/menu/chat-single">
+        <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Sarah_Paulson_12_Years_a_Slave_55_cropped.jpg/129px-Sarah_Paulson_12_Years_a_Slave_55_cropped.jpg" />
+        <h2>Lana Winters</h2>
+        <p>I'm an ambitious journalist committed to the asylum</p>
+      </a>
+      <a class="item item-avatar" href="#/menu/chat-single">
+        <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Evan_Peters_by_Gage_Skidmore.jpg/165px-Evan_Peters_by_Gage_Skidmore.jpg" />
+        <h2>Kit Walker</h2>
+        <p>I'm an inmate at Briarcliff Institute</p>
+      </a>
+
     </div>
   </ion-content>
+
+  <div class="tabs-top tabs-striped tabs-background-balanced">
+    <div class="tabs">
+      <a nav-clear class="tab-item disable-user-behavior" title="Seções" nav-clear ui-sref="menu.tab-1">
+        Seções
+      </a>
+      <a nav-clear class="tab-item disable-user-behavior active" title="Produtos" icon-on="ion-ios7-filing" icon-off="ion-ios7-filing-outline" ui-sref="menu.tab-2">
+        Produtos
+      </a>
+      <a nav-clear class="tab-item disable-user-behavior" title="Carrinho" icon-on="ion-ios7-filing" icon-off="ion-ios7-filing-outline" ui-sref="menu.tab-3">
+        Carrinho
+      </a>
+    </div>
+  </div>
 </ion-view>
